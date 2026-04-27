@@ -24,8 +24,8 @@ STEP 6: Use zscore of to remove outliers
             
 ## Data Cleaning
 
-#### DEVELPOED BY : Saaru lakshmi.D
-#### REG NO : 212223050040
+#### DEVELPOED BY : Dharshini J
+#### REG NO : 212224240036
 ```
 import pandas as pd
 data=pd.read_csv("SAMPLEIDS.csv")
