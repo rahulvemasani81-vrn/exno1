@@ -27,193 +27,244 @@ STEP 6: Use zscore of to remove outliers
 #### DEVELPOED BY : RAHUL  
 #### REG NO : 212225230294
 ```
+     import pandas as pd
+     df=pd.read_csv('D:Data_set (1).csv')
+     print(df)
+     print(data)
+```
+
+<img width="609" height="661" alt="591729354-6733c7cc-81bb-4700-a842-1323abe8b2d8" src="https://github.com/user-attachments/assets/43ad292b-ba53-442c-877a-1ca469a23570" />
+
+
+```
+df.describe()
+```
+
+<img width="609" height="236" alt="591729758-cbf4f1cb-e026-4c4e-a87e-868204ba7cda" src="https://github.com/user-attachments/assets/55c189a3-2be4-48ec-a144-00a1a676c44e" />
+
+
+```
+df=pd.DataFrame(df)
+print(df.isnull())
+```
+
+<img width="672" height="449" alt="591730484-da53dcea-8590-4184-8fe4-4df73d96477d" src="https://github.com/user-attachments/assets/995cd1a8-6383-4beb-9622-482582d671ec" />
+
+```
 import pandas as pd
-data=pd.read_csv("SAMPLEIDS.csv")
-data
+data = pd.read_csv("C:/Users/acer/Downloads/Data_set (1).csv")
+df = pd.DataFrame(data)
+dfd = df.dropna()
+print("AFTER DROPNA")
+print(dfd)
 ```
 
-<img width="820" height="632" alt="image" src="https://github.com/user-attachments/assets/ff3152b7-0823-4949-b635-276ad8fa1a44" />
+<img width="702" height="674" alt="591731496-a95bfb3b-c33f-4d42-8274-54639f027f28" src="https://github.com/user-attachments/assets/e370ca60-2255-4bfa-b666-485b28d2c1ff" />
 
 ```
-data.head()
+dfd = df.dropna(axis=1)
+
+print("AFTER DROPNA")
+print(dfd)
+```
+
+<img width="471" height="254" alt="591732561-b1362da2-f70f-4445-9f33-3b9fb8bf3f58" src="https://github.com/user-attachments/assets/c3c48c0f-e707-416a-b74c-3295c4a1855f" />
+
+
+```
+dfd=df.dropna(axis=1,inplace=True)
+```
+
+<img width="635" height="59" alt="591734021-190597ac-f545-4e6c-88af-f5766dc1e90c" src="https://github.com/user-attachments/assets/d7c895c1-862a-4938-bdd3-715a83102f08" />
+
+
+```
+print("AFTER DROPNA") dfd=df.dropna(axis=0)
+
+print("AFTER DROPNA")
+
+print(dfd)
+```
+
+<img width="426" height="264" alt="591745780-48b5e4e7-0a22-47aa-bc09-da382857da31" src="https://github.com/user-attachments/assets/779ec8a2-7c1f-425f-9fa7-5c4ba290553e" />
+<img width="806" height="397" alt="591745569-c159e5f7-a818-4ab7-8bb0-11725b04da7f" src="https://github.com/user-attachments/assets/bea62111-5e92-4219-ad5a-b57aaff99c48" />
+
+
+```
+import pandas as pd
+
+# Read the dataset
+data = pd.read_csv("C:/Users/acer/Downloads/Data_set (1).csv")
+
+# Convert into DataFrame
+df = pd.DataFrame(data)
+
+# Fill missing values using forward fill method
+dfd = df.fillna(method="ffill")
+
+# Display output
+print("AFTER FILLNA")
+
+print(dfd)
+```
+
+<img width="698" height="671" alt="591760529-2a8c1655-8104-44f0-9ead-0c02d3331792" src="https://github.com/user-attachments/assets/ddd258f1-1bb0-41e5-b75a-9758ddcf659d" />
+
+
+```
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Read the dataset
+data = pd.read_csv("C:/Users/acer/Downloads/iris.csv")
+
+# Convert into DataFrame
+df = pd.DataFrame(data)
+
+# Display dataset
+print(df)
+
+# Select columns
+x = df["petal_length"]
+y = df["sepal_length"]
+
+# Create histogram
+plt.hist(x)
+
+# Display graph
+plt.show()
+
+# Create another histogram
+plt.hist(y)
+
+# Display graph
+plt.show()
+```
+
+<img width="565" height="882" alt="591761201-288267a3-86a5-48f0-9230-f4bddf9fa28a" src="https://github.com/user-attachments/assets/79015997-7cca-49b0-bbd1-8678aa37c6cc" />
+
+```
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Read dataset
+data = pd.read_csv("iris.csv")
+
+# Convert into DataFrame
+df = pd.DataFrame(data)
+
+# Display dataset
+print(df)
+
+# Select columns
+x = df["petal_length"]
+y = df["sepal_length"]
+
+# Label axes
+plt.xlabel('X-axis')
+plt.ylabel('Y-axis')
+
+# Plot graph
+plt.plot(x, y)
+
+# Display graph
+plt.show()
+```
+
+<img width="604" height="580" alt="591762240-d7f34551-63ca-4dec-a2e3-46d691ff0bac" src="https://github.com/user-attachments/assets/449af97c-d75d-4390-8e33-e7f1a6ceb53d" />
+
+
+```
+ import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Read dataset
+data = pd.read_csv("iris.csv")
+
+# Convert into DataFrame
+df = pd.DataFrame(data)
+
+# Display dataset
+print(df)
+
+# Create boxplot
+dff = plt.boxplot(df["petal_width"])
+
+# Display graph
+plt.show()
+
+print(dff)
 
 ```
 
-<img width="790" height="205" alt="image" src="https://github.com/user-attachments/assets/70aca704-601b-4741-b1ca-5a44b6b57278" />
+<img width="916" height="643" alt="591763228-a92cd39d-4c24-4b2e-aa39-a63a3809dc7f" src="https://github.com/user-attachments/assets/68028a05-72a8-4982-ab57-ea4f9a9d5e3e" />
 
-```
-data.tail()
-```
-
-<img width="671" height="157" alt="image" src="https://github.com/user-attachments/assets/465c5e69-71c0-4b34-acfe-2b0c16c40200" />
-
-```
-data.isnull()
-```
-
-<img width="575" height="520" alt="image" src="https://github.com/user-attachments/assets/010e9b38-5f42-4dc5-9082-b85fdbccebb6" />
-
-```
-data.isnull().sum()
-```
-
-<img width="122" height="217" alt="image" src="https://github.com/user-attachments/assets/07744a83-e508-404a-a926-605e0257457f" />
-
-```
-data.isnull().any()
-```
-
-<img width="132" height="227" alt="image" src="https://github.com/user-attachments/assets/40830cc6-8aa8-47a4-af44-15503a20ae67" />
-
-```
-data.dropna()
-```
-
-<img width="697" height="342" alt="image" src="https://github.com/user-attachments/assets/716e08fa-6b5a-4e08-b5f1-0d4724b581ee" />
-
-```
-data.fillna(0)
-
-```
-
-<img width="675" height="522" alt="image" src="https://github.com/user-attachments/assets/b07a3e94-d5ab-40bf-9d4f-f44c0415a098" />
-
-```
-data.fillna(method='ffill')
-```
-
-<img width="666" height="526" alt="image" src="https://github.com/user-attachments/assets/9de42f74-319a-4215-922d-4e0ea62203bf" />
-
-```
-data.fillna(method='bfill')
-```
-
-<img width="687" height="523" alt="image" src="https://github.com/user-attachments/assets/2a78ba3b-e773-4d4c-9454-86ee7167ce23" />
-
-```
- data.fillna({'GENDER':'MALE','NAME':'SRI','ADDRESS':'POONAMALEE','M1':98,'M2':87,'M3':76,'M4':92,'TOTAL':305,'AVG':89.999999})
-```
-
-<img width="668" height="512" alt="image" src="https://github.com/user-attachments/assets/dd936d34-4498-4595-96a8-9bfcfe779ce4" />
 
 ### IQR(Inter Quartile Range)
 
 ```
-import pandas as pd
-ir=pd.read_csv("iris.csv")
-ir
-```
-
-<img width="416" height="316" alt="image" src="https://github.com/user-attachments/assets/66304e97-df9f-44b4-8b15-dab4e70bf550" />
-
-```
-ir.describe()
-```
-
-<img width="362" height="230" alt="image" src="https://github.com/user-attachments/assets/523bf6aa-5b19-4c41-802f-cabbc630c825" />
-
-```
-ir.shape
-```
-
-<img width="87" height="42" alt="image" src="https://github.com/user-attachments/assets/59a33e96-7bc8-4cf4-b6f9-f4fce9f9bff3" />
-
-```
-ir.info()
-```
-
-<img width="312" height="196" alt="image" src="https://github.com/user-attachments/assets/94af2401-5109-46db-a355-e14fd8eaf0cf" />
-
-```
-import seaborn as sns
-sns.boxplot(x='sepal_width',data=ir)
-```
-
-<img width="496" height="428" alt="image" src="https://github.com/user-attachments/assets/05dacc6d-713f-4f92-8027-b939bbf0302b" />
-
-```
- q1=ir.sepal_width.quantile(0.25)
- q3=ir.sepal_width.quantile(0.75)
- iqr=q3-q1
- print(iqr)
-```
-
-<img width="88" height="33" alt="image" src="https://github.com/user-attachments/assets/9ad5bf7f-c2fa-464f-b318-9777f5743cd1" />
-
-```
- out=ir[((ir.sepal_width<(q1-1.5*iqr))|(ir.sepal_width>(q3+1.5*iqr)))]
- out['sepal_width']
-
-```
-
-<img width="292" height="88" alt="image" src="https://github.com/user-attachments/assets/49c7a474-18de-4536-af68-08b00d712b74" />
-
-```
- nor=ir[~((ir.sepal_width<(q1-1.5*iqr))|(ir.sepal_width>(q3+1.5*iqr)))]
- nor['sepal_width']
-```
-
-<img width="383" height="205" alt="image" src="https://github.com/user-attachments/assets/64b1869b-79aa-41fe-a39e-7bedcfbcb763" />
-
-```
-sns.boxplot(x='sepal_width',data=nor)
-```
-
-<img width="531" height="440" alt="image" src="https://github.com/user-attachments/assets/6331d207-4824-44c7-a0e4-497a1a10ae85" />
-
-### Z-SCORE
-
-```
+\import pandas as pd
 import numpy as np
+from scipy import stats
+
+data = pd.read_csv("iris.csv")
+
+df = pd.DataFrame(data)
+
+z_scores = np.abs(stats.zscore(df.select_dtypes(include=[np.number])))
+
+df_cleaned = df[(z_scores < 3).all(axis=1)]
+
+print(df_cleaned)
+```
+
+<img width="608" height="217" alt="591764248-a39e373a-7ebf-494c-8277-f4e73ffa823a" src="https://github.com/user-attachments/assets/35254128-e152-4b69-960f-a3314782ab75" />
+
+
+```
 import pandas as pd
-df=pd.read_csv("heights.csv")
-df
+import numpy as np
+
+data = pd.read_csv("C:/Users/acer/Downloads/iris (1).csv")
+df = pd.DataFrame(data)
+
+Q1 = df["sepal_width"].quantile(0.25)
+
+Q3 = df["sepal_width"].quantile(0.75)
+
+IQR = Q3 - Q1
+
+lower_bound = Q1 - 1.5 * IQR
+
+upper_bound = Q3 + 1.5 * IQR
+
+print("The Original DataSet")
+
+print(df)
+
+outliers = df[
+    (df['sepal_width'] < lower_bound) |
+    (df['sepal_width'] > upper_bound)
+]
+
+print("The Outliers")
+
+print(outliers)
+
+df_clean = df[
+    (df['sepal_width'] >= lower_bound) &
+    (df['sepal_width'] <= upper_bound)
+]
+
+print("The Dataset after removing the outliers")
+
+print(df_clean)
 ```
 
-<img width="177" height="361" alt="image" src="https://github.com/user-attachments/assets/cfc2a520-0c69-4f46-a97b-b603453fc681" />
+<img width="605" height="521" alt="591764949-82cc528f-f488-4a40-b668-53ca733a4e85" src="https://github.com/user-attachments/assets/4fcea3c0-da7d-45de-9fd4-e37375763659" />
 
-```
-import scipy.stats as stats
-q1 = df['height'].quantile(0.25)
-q2 = df['height'].quantile(0.5)
-q3 = df['height'].quantile(0.75)
-iqr = q3-q1
-iqr
-
-```
-
-<img width="166" height="41" alt="image" src="https://github.com/user-attachments/assets/77c50179-11e6-43bf-838e-89c9bc47baf5" />
-
-```
-low = q1 - 1.5*iqr
-print(low)
-high = q3 + 1.5*iqr
-print(high)
-```
-
-<img width="147" height="47" alt="image" src="https://github.com/user-attachments/assets/3f4d3793-91a5-4bc9-8aa1-ef6393cea8e2" />
-
-```
-df1 = df[((df['height'] >=low)& (df['height'] <=high))]
-df1
-```
-
-<img width="147" height="308" alt="image" src="https://github.com/user-attachments/assets/ba2cfbfc-ddd9-499d-aeb7-2a44f00724fa" />
-
-```
-z = np.abs(stats.zscore(df['height']))
-z
-```
-
-<img width="270" height="246" alt="image" src="https://github.com/user-attachments/assets/7ce477e6-e8c8-4908-9dd9-250c2119d535" />
-
-```
-df1 = df[z<3]
-df1
-```
-
-<img width="191" height="336" alt="image" src="https://github.com/user-attachments/assets/94f0399e-1f9d-4f33-b6d2-b7730079e1a2" />
-
-## Result
-    
-Thus we have cleaned the data and removed the outliers by detection using IQR and Z-score method.
+Result
+THUS DATA CLEANING IS PERFORMED
